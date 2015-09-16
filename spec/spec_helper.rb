@@ -2,6 +2,8 @@
 require 'rack/test'
 require 'rspec'
 
+require 'simplecov'
+SimpleCov.start
 require File.expand_path '../../app.rb', __FILE__
 
 ENV['RACK_ENV'] = 'test'
@@ -13,7 +15,7 @@ end
 
 # For RSpec 2.x
 RSpec.configure do |config|
-  config.include RSpecMixin 
+  config.include RSpecMixin
 
   config.formatter = :documentation
   config.tty = true
